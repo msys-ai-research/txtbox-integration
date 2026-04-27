@@ -1,0 +1,21 @@
+node_modules/
+dist/
+*.log
+npm-debug.log*
+
+# Secrets — never commit these
+.env
+.env.local
+.env.*.local
+.claude.json
+.mcp.json
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Coverage
+coverage/
+.nyc_output/

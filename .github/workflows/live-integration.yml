@@ -1,0 +1,27 @@
+name: Live Integration
+
+# Manual-only. Each run sends a real SMS — billed against the configured account.
+on:
+  workflow_dispatch:
+    inputs:
+      recipient:
+        description: "Recipient PH number (09XXXXXXXXX). Defaults to repo secret TXTBOX_TEST_RECIPIENT."
+        required: false
+        type: string
+
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - name: Run live integration test
+        env:
+          RUN_LIVE_INTEGRATION: "1"
+          TXTBOX_API_KEY: ${{ secrets.TXTBOX_API_KEY }}
+          TXTBOX_TEST_RECIPIENT: ${{ inputs.recipient || secrets.TXTBOX_TEST_RECIPIENT }}
+        run: npm run test:integration
