@@ -2,8 +2,6 @@
 
 Send SMS via the [Txtbox](https://www.txtbox.com) Philippine SMS platform from any Model Context Protocol (MCP) client — Claude Code, Claude Desktop, Cursor, etc. **Hosted as a remote HTTP MCP server** (deploy once on Railway, share the URL with your team) plus a Claude Code Skill that gates invocation tightly and works with **or without** the MCP server reachable.
 
-> v0.2 wraps the single publicly documented endpoint `POST /messaging/v1/sms/push`. Custom sender names, blast/batch, templates, contact groups, and delivery webhooks are deferred to v2 — see [`ROADMAP.md`](./ROADMAP.md).
-
 ## Architecture
 
 ```
