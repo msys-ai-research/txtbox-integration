@@ -106,16 +106,6 @@ You can use the skill with or without the server. The server is the better defau
 | Skill not triggering on "send SMS" | Ensure the skill is installed (`/skills` in Claude Code shows `txtbox`) and your prompt includes a Philippine number. |
 | Skill triggers but tool fails with "tool not registered" | The skill will fall back to curl. To use the MCP path, register the hosted server in `~/.claude.json` (see "Register in Claude Code") and restart Claude Code. |
 
-## Non-goals (v0.2)
-
-- Custom sender / mask name (public field name unconfirmed; account default sender is used).
-- Bulk / blast endpoint, templates, contact groups.
-- Delivery receipts, status polling, webhooks.
-- Credit balance lookup.
-- Native multi-recipient (skill loops sequentially with N=20 cap).
-
-See [`ROADMAP.md`](./ROADMAP.md) for the v2 surface.
-
 ## Develop
 
 ```sh
